@@ -25,6 +25,7 @@ Several options are allowed after the api key.
    [-h HOSTNAME (default "api.logmatic.io")] [-p PORT (default "10514")]
    [--matchByImage REGEXP] [--matchByName REGEXP]
    [--skipByImage REGEXP] [--skipByName REGEXP]
+   [--withDockerEvents [BOOLEAN] (default true)]
 ```
 
 ## Add extra attributes
@@ -36,6 +37,10 @@ You can add extra attributes to all the pushed entries by chaining the option "-
 If you don't want all your containers to send log entries to Logmatic.io you can user the options `--matchByImage`, `--matchByName`, `--skipByImage` or `--skipByName`.
 
 However, use one inclusion/exclusion policy as these options cannot live together.
+
+## Send Docker events
+
+By default, [Docker events](#the-docker-events) are sent to Logmatic.io, but you can use the option `--withDockerEvents` and set it to `false` if you decide not to send them.
 
 # What are the data types sent to Logmatic.io?
 
